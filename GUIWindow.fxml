@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.control.TreeView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.GUIEvents">
+   <top>
+      <SplitPane dividerPositions="0.29797979797979796" prefHeight="43.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <MenuBar layoutX="22.0" layoutY="15.0" prefHeight="41.0" prefWidth="175.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <menus>
+                      <Menu mnemonicParsing="false" text="File">
+                        <items>
+                          <MenuItem fx:id="openScript" mnemonicParsing="false" onAction="#openScript" text="Open SQL Script" />
+                              <MenuItem fx:id="runScript" mnemonicParsing="false" onAction="#runScript" text="Run SQL Script" />
+                              <MenuItem fx:id="saveScript" mnemonicParsing="false" onAction="#saveScript" text="Save SQL Script" />
+                        </items>
+                      </Menu>
+                      <Menu mnemonicParsing="false" text="Edit">
+                        <items>
+                          <MenuItem fx:id="copyEdit" mnemonicParsing="false" onAction="#copyEdit" text="Copy" />
+                              <MenuItem fx:id="pasteEdit" mnemonicParsing="false" onAction="#pasteEdit" text="Paste" />
+                              <MenuItem fx:id="pref" mnemonicParsing="false" onAction="#prefEdit" text="Preferences" />
+                        </items>
+                      </Menu>
+                      <Menu mnemonicParsing="false" text="Help">
+                        <items>
+                          <MenuItem fx:id="aboutProject" mnemonicParsing="false" onAction="#aboutProject" text="About" />
+                        </items>
+                      </Menu>
+                    </menus>
+                  </MenuBar>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <ButtonBar layoutX="-309.0" prefHeight="41.0" prefWidth="417.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-309.0" AnchorPane.rightAnchor="309.0" AnchorPane.topAnchor="0.0">
+                    <buttons>
+                        <Button fx:id="selectedText" mnemonicParsing="false" onAction="#whenSelectedText" text="selectedText">
+                           <tooltip>
+                              <Tooltip text="Run Selected Commands" />
+                           </tooltip>
+                        </Button>
+                    </buttons>
+                  </ButtonBar>
+                  <Button fx:id="allText" layoutX="125.0" layoutY="8.0" mnemonicParsing="false" onAction="#whenAllText" prefHeight="25.0" prefWidth="74.0" text="allText">
+                     <tooltip>
+                        <Tooltip text="Run All Commands" />
+                     </tooltip></Button>
+                <Button fx:id="removeText" layoutX="217.0" layoutY="8.0" mnemonicParsing="false" onAction="#removeText" prefHeight="27.0" prefWidth="76.0" text="Sweep">
+                     <tooltip>
+                        <Tooltip text="Clears entries" />
+                     </tooltip></Button>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </top>
+   <left>
+      <TreeView fx:id="tree" onEditStart="#treeArea" prefHeight="357.0" prefWidth="179.0" BorderPane.alignment="CENTER" />
+   </left>
+   <center>
+      <SplitPane dividerPositions="0.35492957746478876" orientation="VERTICAL" prefHeight="357.0" prefWidth="427.0" BorderPane.alignment="CENTER">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+               <children>
+                  <TextArea fx:id="commandWindow" layoutX="-11.0" layoutY="-62.0" prefHeight="112.0" prefWidth="416.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+               <children>
+                  <SplitPane dividerPositions="0.47767857142857145" layoutX="93.0" layoutY="13.0" orientation="VERTICAL" prefHeight="226.0" prefWidth="416.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <items>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                           <children>
+                              <TextField fx:id="selectWindow" editable="false" layoutX="52.0" layoutY="40.0" onAction="#selectWindow" prefHeight="104.0" prefWidth="417.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                           </children>
+                        </AnchorPane>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                           <children>
+                              <TextField fx:id="logArea" editable="false" layoutX="143.0" layoutY="57.0" onAction="#logArea" prefHeight="114.0" prefWidth="417.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                           </children>
+                        </AnchorPane>
+                    </items>
+                  </SplitPane>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </center>
+</BorderPane>
