@@ -151,7 +151,7 @@ public static boolean Select(String dbName, String tabName)
    } // end catch
 } // end
 
-/*//  SELECT method (with the where)
+ SELECT method (with the where)
 public static boolean SelectWhere(String recordName, String DBName, String TableName, String message)
 {
    try
@@ -176,7 +176,7 @@ public static boolean SelectWhere(String recordName, String DBName, String Table
      return false;
    } // end catch
 } // end	   
-  */
+  
   //  DELETE method (without the where)
 public static boolean Delete(String dbName, String tabName)
 {
