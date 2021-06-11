@@ -10,7 +10,7 @@ public class ConnectDB {
 	static String databaseName = "StudentDatabase";
 	static String url = "jdbc:mysql://localhost:3306/" + databaseName;
 	static String username = "root";
-	static String password = "Qazmango7";
+	static String password = "";
 	
 	
 	public static void main(String[] args) throws InstantiationException, IllegalAccessException, ClassNotFoundException, SQLException {
